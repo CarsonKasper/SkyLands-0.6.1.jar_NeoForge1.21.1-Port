@@ -1,0 +1,13 @@
+{
+    "type":  "neoforge:add_features",
+    "biomes":  [
+                   "minecraft:snowy_plains",
+                   "minecraft:ice_spikes",
+                   "minecraft:snowy_taiga",
+                   "minecraft:grove",
+                   "minecraft:jagged_peaks",
+                   "minecraft:frozen_peaks"
+               ],
+    "features":  "flying_stuff:fiis_1_feature",
+    "step":  "raw_generation"
+}

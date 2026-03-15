@@ -1,0 +1,14 @@
+{
+    "type":  "neoforge:add_features",
+    "biomes":  [
+                   "minecraft:plains",
+                   "minecraft:sunflower_plains",
+                   "minecraft:meadow",
+                   "minecraft:forest",
+                   "minecraft:flower_forest",
+                   "minecraft:birch_forest",
+                   "minecraft:old_growth_birch_forest"
+               ],
+    "features":  "flying_stuff:fimsnow_0_feature",
+    "step":  "raw_generation"
+}

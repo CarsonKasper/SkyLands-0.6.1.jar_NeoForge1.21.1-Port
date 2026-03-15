@@ -1,0 +1,264 @@
+package com.carsonkasper.skylands;
+
+import net.minecraft.core.registries.Registries;
+import net.minecraft.network.chat.Component;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.Item;
+import net.neoforged.neoforge.registries.DeferredHolder;
+import net.neoforged.neoforge.registries.DeferredRegister;
+
+public final class SkyLandsCreativeTabs {
+    public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, SkyLandsMod.MODID);
+
+    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> SKY_LANDS_BLOCKS = CREATIVE_MODE_TABS.register("sky_lands_blocks", () -> CreativeModeTab.builder()
+        .title(Component.translatable("itemGroup.flying_stuff.sky_lands_blocks"))
+        .icon(() -> SkyLandsBlocks.SKYROCK.toStack())
+        .displayItems((parameters, output) -> addOrderedItems(output))
+        .build());
+
+    private SkyLandsCreativeTabs() {
+    }
+
+    private static void addOrderedItems(CreativeModeTab.Output output) {
+        accept(output, "skyrock");
+        accept(output, "skyrock_stairs");
+        accept(output, "skyrock_slab");
+        accept(output, "skyrock_wall");
+        accept(output, "mossy_skyrock");
+        accept(output, "cherry_mossy_skyrock");
+        accept(output, "cobbled_skyrock");
+        accept(output, "cobbled_skyrock_stairs");
+        accept(output, "cobbled_skyrock_slab");
+        accept(output, "cobbled_skyrock_wall");
+        accept(output, "tiled_skyrock");
+        accept(output, "tiled_skyrock_stairs");
+        accept(output, "tiled_skyrock_slab");
+        accept(output, "mossy_tiled_skyrock");
+        accept(output, "cherry_mossy_tiled_skyrock");
+        accept(output, "polished_skyrock");
+        accept(output, "polished_skyrock_stairs");
+        accept(output, "polished_skyrock_slab");
+        accept(output, "chiseled_skyrock");
+        accept(output, "skyrock_column_base");
+        accept(output, "skyrockcolumn");
+        accept(output, "fiery_grass_block");
+        accept(output, "fiery_grass");
+        accept(output, "fiery_short_grass");
+        accept(output, "golden_fern");
+        accept(output, "blow_flower");
+        accept(output, "smoke_flower_plant");
+        accept(output, "smoke_flower_plant_grow_stage");
+        accept(output, "float_grape_plant");
+        accept(output, "firey_tree_sapling");
+        accept(output, "fiery_leaves");
+        accept(output, "cherry_grass_block");
+        accept(output, "cherry_grass");
+        accept(output, "cherry_short_grass");
+        accept(output, "fiery_log");
+        accept(output, "fiery_wood");
+        accept(output, "stripped_fierylog");
+        accept(output, "stripped_fiery_wood");
+        accept(output, "f_iery_planks");
+        accept(output, "fiery_planks_stairs");
+        accept(output, "fiery_planks_slab");
+        accept(output, "fiery_planks_fence");
+        accept(output, "fiery_planks_door");
+        accept(output, "fiery_planks_trapdoor");
+        accept(output, "fiery_pressure_plate");
+        accept(output, "fiery_button");
+        accept(output, "celestiumore");
+        accept(output, "celestium_block");
+        accept(output, "celestium_spike");
+        accept(output, "celestium_antenna");
+        accept(output, "glaciated_skyrock");
+        accept(output, "glaciated_skyrock_stairs");
+        accept(output, "glaciated_skyrockslab");
+        accept(output, "glaciated_skyrock_wall");
+        accept(output, "mossy_glaciated_skyrock");
+        accept(output, "mossy_swampy_skyrock");
+        accept(output, "cobbled_glaciated_skyrock");
+        accept(output, "cobbled_glaciated_skyrock_stairs");
+        accept(output, "cobbled_glaciated_skyrock_slab");
+        accept(output, "cobbled_glaciated_skyrockwall");
+        accept(output, "polished_glacitated_skyrock");
+        accept(output, "polished_glaciated_skyrock_stairs");
+        accept(output, "polished_glaciated_skyrock_slab");
+        accept(output, "glaciated_skyrock_bricks");
+        accept(output, "glaciated_skyrock_bricks_stairs");
+        accept(output, "glaciated_skyrock_bricks_slab");
+        accept(output, "mossy_glaciated_skyrock_bricks");
+        accept(output, "mossy_swampy_skyrock_bricks");
+        accept(output, "chiseled_glaciated_skyrock");
+        accept(output, "glaciated_skyrock_pillar_base");
+        accept(output, "glaciated_skyrock_pillar");
+        accept(output, "cristalizedice");
+        accept(output, "glaciated_grass_block");
+        accept(output, "short_glaciated_grass");
+        accept(output, "tall_glaciated_grass");
+        accept(output, "glaciated_fern");
+        accept(output, "glaciated_tree_sapling");
+        accept(output, "warmth_radish_plant");
+        accept(output, "ice_spikes");
+        accept(output, "glaciated_leaves");
+        accept(output, "swampy_grass_block");
+        accept(output, "swampy_grass");
+        accept(output, "swampy_bush");
+        accept(output, "swampy_water_plant");
+        accept(output, "glaciated_log");
+        accept(output, "glaciated_wood");
+        accept(output, "stripped_glaciatedlog");
+        accept(output, "stripped_glaciated_wood");
+        accept(output, "glaciated_planks");
+        accept(output, "glaciated_planks_stairs");
+        accept(output, "glaciated_planks_slab");
+        accept(output, "glaciated_planks_fence");
+        accept(output, "glaciated_planks_door");
+        accept(output, "glaciated_planks_trapdoor");
+        accept(output, "glaciated_wood_pressure_plate");
+        accept(output, "glaciated_wood_button");
+        accept(output, "amber_celestium_ore");
+        accept(output, "amber_celestium_block");
+        accept(output, "amber_celestium_spike");
+        accept(output, "amber_celestium_antenna");
+        accept(output, "lavic_skyrock");
+        accept(output, "lavic_skyrock_staircase");
+        accept(output, "lavic_skyrock_slab");
+        accept(output, "lavic_skyrock_walls");
+        accept(output, "molten_metal_bucket");
+        accept(output, "polished_lavic_skyrock");
+        accept(output, "polished_lavic_skyrock_staircase");
+        accept(output, "polished_lavic_skyrock_slab");
+        accept(output, "lavic_skyrock_bricks");
+        accept(output, "lavic_skyrock_bricks_staircase");
+        accept(output, "lavic_skyrock_bricks_slab");
+        accept(output, "lavic_skyrock_tiles");
+        accept(output, "lavic_skyrock_grates");
+        accept(output, "lavic_skyrock_pipe");
+        accept(output, "lavic_skymetal_grass");
+        accept(output, "short_lavic_grass");
+        accept(output, "metallic_shorter_grass");
+        accept(output, "lavic_mushrooms");
+        accept(output, "lavic_tree_sapling");
+        accept(output, "lavic_fungus_block");
+        accept(output, "lavic_stem");
+        accept(output, "lavic_wood");
+        accept(output, "stripped_lavic_stem");
+        accept(output, "stripped_lavic_wood");
+        accept(output, "lavic_planks");
+        accept(output, "lavic_planks_staircase");
+        accept(output, "lavic_planks_slab");
+        accept(output, "lavic_planks_fence");
+        accept(output, "lavic_planks_door");
+        accept(output, "lavic_planks_trapdoor");
+        accept(output, "lavic_pressure_plate");
+        accept(output, "lavic_button");
+        accept(output, "pale_celestium_ore");
+        accept(output, "pale_celestium_block");
+        accept(output, "pale_celestium_spike");
+        accept(output, "pale_celestium_antenna");
+        accept(output, "sky_sandstone");
+        accept(output, "sky_sandstone_stairs");
+        accept(output, "sky_sandstone_slab");
+        accept(output, "sky_sandstone_wall");
+        accept(output, "mossy_sky_sandstone");
+        accept(output, "sky_sandstone_bricks");
+        accept(output, "sky_sandstone_brick_stairs");
+        accept(output, "sky_sandstone_brick_slab");
+        accept(output, "mossy_sky_sandstone_bricks");
+        accept(output, "polished_sky_sandstone");
+        accept(output, "polished_sky_sandstone_stairs");
+        accept(output, "polished_sky_sandstone_slab");
+        accept(output, "chiseled_sky_sandstone");
+        accept(output, "sky_sandstone_pillar_base");
+        accept(output, "sky_sand");
+        accept(output, "arid_grass");
+        accept(output, "small_arid_bush");
+        accept(output, "small_sky_cactus");
+        accept(output, "sky_cactus");
+        accept(output, "sky_cactus_branch");
+        accept(output, "sky_cactus_top");
+        accept(output, "inky_planks");
+        accept(output, "inky_planks_stairs");
+        accept(output, "inky_planks_slab");
+        accept(output, "inky_mosaic");
+        accept(output, "inky_mosaic_stairs");
+        accept(output, "inky_mosaic_slab");
+        accept(output, "inky_planks_fence");
+        accept(output, "inky_planks_door");
+        accept(output, "inky_planks_trapdoor");
+        accept(output, "inky_pressure_plate");
+        accept(output, "inky_button");
+        accept(output, "inky_celestium_ore");
+        accept(output, "inky_celestium_block");
+        accept(output, "inky_celestium_spike");
+        accept(output, "inky_celestium_antenna");
+        accept(output, "grimstone");
+        accept(output, "grimstone_stairs");
+        accept(output, "grimstone_slab");
+        accept(output, "grimstone_wall");
+        accept(output, "blue_grimstone");
+        accept(output, "glowing_grimstone");
+        accept(output, "polished_grimstone");
+        accept(output, "polished_grimstone_stairs");
+        accept(output, "polished_grimstone_slab");
+        accept(output, "grimstone_bricks");
+        accept(output, "grimstone_bricks_stairs");
+        accept(output, "grimstone_bricks_slab");
+        accept(output, "grimstone_tiles");
+        accept(output, "grimstone_tiles_stairs");
+        accept(output, "grimstone_tiles_slab");
+        accept(output, "grimstone_pillar");
+        accept(output, "chiseled_grimstone");
+        accept(output, "polished_bedrock");
+        accept(output, "grimstone_micelium");
+        accept(output, "abyss_grass");
+        accept(output, "short_abyss_grass");
+        accept(output, "celestial_tree_leaves");
+        accept(output, "metallic_silk_block");
+        accept(output, "grimstone_iron_ore");
+        accept(output, "grimstone_gold_ore");
+        accept(output, "grimstone_diamond_ore");
+        accept(output, "grimstone_redstone_ore");
+        accept(output, "grimstone_lapis_ore");
+        accept(output, "sulfur_block");
+        accept(output, "celestine_block");
+        accept(output, "celestine_spike");
+        accept(output, "small_celestine_spike");
+        accept(output, "sulfur_spike");
+        accept(output, "sulfur_sand");
+        accept(output, "celestial_log");
+        accept(output, "celestial_wood");
+        accept(output, "celestial_planks");
+        accept(output, "celestial_stairs");
+        accept(output, "celestial_slab");
+        accept(output, "celestial_fence");
+        accept(output, "celestial_door");
+        accept(output, "celestial_trapdoor");
+        accept(output, "celestial_button");
+        accept(output, "celestial_pressure_plate");
+        accept(output, "shrine_plate");
+        accept(output, "shrine_wall");
+        accept(output, "shrine_wall_base");
+        accept(output, "shrine_wall_staircase");
+        accept(output, "shrine_wall_slab");
+        accept(output, "shrine_tiles");
+        accept(output, "shrine_tiles_staircase");
+        accept(output, "shrine_tiles_slab");
+        accept(output, "shrine_floor");
+        accept(output, "shrine_floor_staircase");
+        accept(output, "shrine_floor_slab");
+        accept(output, "shrine_sand");
+    }
+
+    private static void accept(CreativeModeTab.Output output, String id) {
+        output.accept(findItem(id));
+    }
+
+    private static Item findItem(String id) {
+        return SkyLandsBlocks.ITEMS.getEntries().stream()
+            .filter(holder -> holder.getId().getPath().equals(id))
+            .findFirst()
+            .orElseThrow(() -> new IllegalStateException("Missing creative tab item: " + id))
+            .get();
+    }
+}

@@ -1,0 +1,5 @@
+{
+  "loader": "neoforge:fluid_container",
+  "parent": "neoforge:item/bucket_drip",
+  "fluid": "flying_stuff:molten_metal"
+}
