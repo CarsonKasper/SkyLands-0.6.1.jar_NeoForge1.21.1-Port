@@ -18,6 +18,10 @@ group = mod_group_id
 
 repositories {
     // Add here additional repositories if required by some of the dependencies below.
+    maven {
+        name = 'Forge'
+        url = 'https://maven.minecraftforge.net'
+    }
 }
 
 base {
