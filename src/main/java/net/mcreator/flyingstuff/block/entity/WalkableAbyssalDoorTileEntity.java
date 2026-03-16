@@ -1,0 +1,156 @@
+package net.mcreator.flyingstuff.block.entity;
+
+import java.util.stream.IntStream;
+import javax.annotation.Nullable;
+import net.mcreator.flyingstuff.block.WalkableAbyssalDoorBlock;
+import net.mcreator.flyingstuff.init.FlyingStuffModBlockEntities;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.core.NonNullList;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
+import net.minecraft.world.ContainerHelper;
+import net.minecraft.world.WorldlyContainer;
+import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.inventory.ChestMenu;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.IntegerProperty;
+import net.neoforged.neoforge.items.IItemHandler;
+import net.neoforged.neoforge.items.wrapper.SidedInvWrapper;
+import software.bernie.geckolib.animatable.GeoBlockEntity;
+import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
+import software.bernie.geckolib.animation.AnimationController;
+import software.bernie.geckolib.animation.AnimationState;
+import software.bernie.geckolib.animation.RawAnimation;
+import software.bernie.geckolib.animation.AnimatableManager.ControllerRegistrar;
+import software.bernie.geckolib.animation.AnimationController.State;
+import software.bernie.geckolib.animation.PlayState;
+import software.bernie.geckolib.util.GeckoLibUtil;
+
+public class WalkableAbyssalDoorTileEntity extends LegacyRandomizableContainerBlockEntity implements GeoBlockEntity, WorldlyContainer {
+   private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
+   private NonNullList<ItemStack> stacks = NonNullList.withSize(9, ItemStack.EMPTY);
+
+   public WalkableAbyssalDoorTileEntity(BlockPos pos, BlockState state) {
+      super((BlockEntityType)FlyingStuffModBlockEntities.WALKABLE_ABYSSAL_DOOR.get(), pos, state);
+   }
+
+   private PlayState predicate(AnimationState event) {
+      String animationprocedure = this.m_58900_().getValue(WalkableAbyssalDoorBlock.ANIMATION) + "";
+      return animationprocedure.equals("0") ? event.setAndContinue(RawAnimation.begin().thenLoop(animationprocedure)) : PlayState.STOP;
+   }
+
+   private PlayState procedurePredicate(AnimationState event) {
+      String animationprocedure = this.m_58900_().getValue(WalkableAbyssalDoorBlock.ANIMATION) + "";
+      if (!animationprocedure.equals("0") && event.getController().getAnimationState() == State.STOPPED) {
+         event.getController().setAnimation(RawAnimation.begin().thenPlay(animationprocedure));
+         if (event.getController().getAnimationState() == State.STOPPED) {
+            if (this.m_58900_().getBlock().getStateDefinition().getProperty("animation") instanceof IntegerProperty _integerProp) {
+               this.getLevel().setBlock(this.m_58899_(), (BlockState)this.m_58900_().setValue(_integerProp, 0), 3);
+            }
+
+            event.getController().forceAnimationReset();
+         }
+      } else if (animationprocedure.equals("0")) {
+         return PlayState.STOP;
+      }
+
+      return PlayState.CONTINUE;
+   }
+
+   public void registerControllers(ControllerRegistrar data) {
+      data.add(new AnimationController[]{new AnimationController(this, "controller", 0, this::predicate)});
+      data.add(new AnimationController[]{new AnimationController(this, "procedurecontroller", 0, this::procedurePredicate)});
+   }
+
+   public AnimatableInstanceCache getAnimatableInstanceCache() {
+      return this.cache;
+   }
+
+   public void loadWithComponents(CompoundTag compound) {
+      super.loadWithComponents(compound);
+      if (!this.m_59631_(compound)) {
+         this.stacks = NonNullList.withSize(this.m_6643_(), ItemStack.EMPTY);
+      }
+
+      ContainerHelper.loadAllItems(compound, this.stacks, this.lookupProvider());
+   }
+
+   public void m_183515_(CompoundTag compound) {
+      super.m_183515_(compound);
+      if (!this.m_59634_(compound)) {
+         ContainerHelper.saveAllItems(compound, this.stacks, this.lookupProvider());
+      }
+   }
+
+   public ClientboundBlockEntityDataPacket getUpdatePacket() {
+      return ClientboundBlockEntityDataPacket.create(this);
+   }
+
+   public CompoundTag m_5995_() {
+      return this.saveWithoutMetadata();
+   }
+
+   public int m_6643_() {
+      return this.stacks.size();
+   }
+
+   public boolean m_7983_() {
+      for (ItemStack itemstack : this.stacks) {
+         if (!itemstack.isEmpty()) {
+            return false;
+         }
+      }
+
+      return true;
+   }
+
+   public Component m_6820_() {
+      return Component.literal("walkable_abyssal_door");
+   }
+
+   public int m_6893_() {
+      return 64;
+   }
+
+   public AbstractContainerMenu m_6555_(int id, Inventory inventory) {
+      return ChestMenu.threeRows(id, inventory);
+   }
+
+   public Component getDisplayName() {
+      return Component.literal("Abyssal Door");
+   }
+
+   protected NonNullList<ItemStack> m_7086_() {
+      return this.stacks;
+   }
+
+   protected void m_6520_(NonNullList<ItemStack> stacks) {
+      this.stacks = stacks;
+   }
+
+   public boolean m_7013_(int index, ItemStack stack) {
+      return true;
+   }
+
+   public int[] m_7071_(Direction side) {
+      return IntStream.range(0, this.m_6643_()).toArray();
+   }
+
+   public boolean m_7155_(int index, ItemStack stack, @Nullable Direction direction) {
+      return this.m_7013_(index, stack);
+   }
+
+   public boolean m_7157_(int index, ItemStack stack, Direction direction) {
+      return true;
+   }
+
+   public void setChanged() {
+      super.setChanged();
+   }
+}
+

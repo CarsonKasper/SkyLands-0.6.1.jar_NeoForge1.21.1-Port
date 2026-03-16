@@ -1,0 +1,19 @@
+package net.mcreator.flyingstuff.block;
+
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
+
+public class PolishedBedrockBlock extends Block {
+   public PolishedBedrockBlock() {
+      super(Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.AMETHYST).strength(-1.0F, 3600000.0F).requiresCorrectToolForDrops());
+   }
+
+   public int m_7753_(BlockState state, BlockGetter worldIn, BlockPos pos) {
+      return 15;
+   }
+}

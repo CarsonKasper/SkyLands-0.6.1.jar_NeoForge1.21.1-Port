@@ -1,0 +1,12 @@
+package net.mcreator.flyingstuff.procedures;
+
+import net.minecraft.world.entity.Entity;
+
+public class TemporaryFireEntityCollidesInTheBlockProcedure {
+   public static void execute(Entity entity) {
+      if (entity != null) {
+         entity.setRemainingFireTicks(200);
+      }
+   }
+}
+

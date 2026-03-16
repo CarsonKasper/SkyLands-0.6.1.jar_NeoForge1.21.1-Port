@@ -17,7 +17,9 @@ version = mod_version
 group = mod_group_id
 
 repositories {
-    // Add here additional repositories if required by some of the dependencies below.
+    flatDir {
+        dir 'requiredmods'
+    }
 }
 
 base {
@@ -27,7 +29,7 @@ base {
 // Mojang ships Java 21 to end users in 1.21.1, so mods should target Java 21.
 java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 
-//minecraft.accessTransformers.file rootProject.file('src/main/resources/META-INF/accesstransformer.cfg')
+minecraft.accessTransformers.file rootProject.file('src/main/resources/META-INF/accesstransformer.cfg')
 //minecraft.accessTransformers.entry public net.minecraft.client.Minecraft textureManager # textureManager
 
 // Default run configurations.
@@ -96,6 +98,14 @@ dependencies {
     // For all intends and purposes: You can treat this dependency as if it is a normal library you would use.
     implementation "net.neoforged:neoforge:${neo_version}"
 
+    compileOnly name: 'cloth-config-15.0.140-neoforge'
+    localRuntime name: 'cloth-config-15.0.140-neoforge'
+    compileOnly name: 'geckolib-neoforge-1.21.1-4.8.4'
+    localRuntime name: 'geckolib-neoforge-1.21.1-4.8.4'
+    compileOnly name: 'player-animation-lib-forge-2.0.4+1.21.1'
+    localRuntime name: 'player-animation-lib-forge-2.0.4+1.21.1'
+    compileOnly name: 'TerraBlender-neoforge-1.21.1-4.1.0.8'
+    localRuntime name: 'TerraBlender-neoforge-1.21.1-4.1.0.8'
     // Example optional mod dependency with JEI
     // The JEI API is declared for compile time use, while the full JEI artifact is used at runtime
     // compileOnly "mezz.jei:jei-${mc_version}-common-api:${jei_version}"

@@ -1,0 +1,62 @@
+package net.mcreator.flyingstuff.client.particle;
+
+import net.minecraft.client.multiplayer.ClientLevel;
+import net.minecraft.client.particle.Particle;
+import net.minecraft.client.particle.ParticleProvider;
+import net.minecraft.client.particle.ParticleRenderType;
+import net.minecraft.client.particle.SpriteSet;
+import net.minecraft.client.particle.TextureSheetParticle;
+import net.minecraft.core.particles.SimpleParticleType;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
+
+@OnlyIn(Dist.CLIENT)
+public class FireLeafParticle extends TextureSheetParticle {
+   private final SpriteSet spriteSet;
+   private float angularVelocity;
+   private float angularAcceleration;
+
+   public static FireLeafParticle.FireLeafParticleProvider provider(SpriteSet spriteSet) {
+      return new FireLeafParticle.FireLeafParticleProvider(spriteSet);
+   }
+
+   protected FireLeafParticle(ClientLevel world, double x, double y, double z, double vx, double vy, double vz, SpriteSet spriteSet) {
+      super(world, x, y, z);
+      this.spriteSet = spriteSet;
+      this.setSize(0.2F, 0.2F);
+      this.lifetime = Math.max(1, 140 + (this.random.nextInt(240) - 120));
+      this.gravity = 0.003F;
+      this.hasPhysics = true;
+      this.xd = vx * 0.12;
+      this.yd = vy * 0.12;
+      this.zd = vz * 0.12;
+      this.angularVelocity = -0.015F;
+      this.angularAcceleration = 0.0F;
+      this.pickSprite(spriteSet);
+   }
+
+   public ParticleRenderType getRenderType() {
+      return ParticleRenderType.PARTICLE_SHEET_OPAQUE;
+   }
+
+   public void tick() {
+      super.tick();
+      this.oRoll = this.roll;
+      this.roll = this.roll + this.angularVelocity;
+      this.angularVelocity = this.angularVelocity + this.angularAcceleration;
+   }
+
+   public static class FireLeafParticleProvider implements ParticleProvider<SimpleParticleType> {
+      private final SpriteSet spriteSet;
+
+      public FireLeafParticleProvider(SpriteSet spriteSet) {
+         this.spriteSet = spriteSet;
+      }
+
+      public Particle createParticle(SimpleParticleType typeIn, ClientLevel worldIn, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed) {
+         return new FireLeafParticle(worldIn, x, y, z, xSpeed, ySpeed, zSpeed, this.spriteSet);
+      }
+   }
+}
+
+
