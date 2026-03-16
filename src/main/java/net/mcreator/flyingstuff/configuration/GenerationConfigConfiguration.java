@@ -1,12 +1,9 @@
 package net.mcreator.flyingstuff.configuration;
 
-import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.fml.common.EventBusSubscriber.Bus;
 import net.neoforged.neoforge.common.ModConfigSpec;
 import net.neoforged.neoforge.common.ModConfigSpec.Builder;
 import net.neoforged.neoforge.common.ModConfigSpec.ConfigValue;
 
-@EventBusSubscriber(bus = Bus.MOD)
 public class GenerationConfigConfiguration {
    public static final Builder BUILDER = new Builder();
    public static final ModConfigSpec SPEC = BUILDER.build();

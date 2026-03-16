@@ -1,0 +1,8 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": [
+    "desert"
+  ],
+  "features": "flying_stuff:dfis_5",
+  "step": "raw_generation"
+}

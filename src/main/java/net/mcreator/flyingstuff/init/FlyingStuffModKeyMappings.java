@@ -35,7 +35,7 @@ public class FlyingStuffModKeyMappings {
    @EventBusSubscriber(Dist.CLIENT)
    public static class KeyEventListener {
       @SubscribeEvent
-      public static void onClientTick(ClientTickEvent event) {
+      public static void onClientTick(ClientTickEvent.Post event) {
          if (Minecraft.getInstance().screen == null) {
             FlyingStuffModKeyMappings.FREEFALL.setDown(false);
          }

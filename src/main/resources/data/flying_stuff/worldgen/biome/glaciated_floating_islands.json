@@ -47,7 +47,15 @@
     ]
   },
   "features": [
-    [],
+    [
+      "flying_stuff:fiim_0_feature",
+      "flying_stuff:fiim_1_feature",
+      "flying_stuff:fiim_2",
+      "flying_stuff:fiisc_0",
+      "flying_stuff:fiisc_1",
+      "flying_stuff:fiis_0_feature",
+      "flying_stuff:fiis_1_feature"
+    ],
     [
       "minecraft:lake_lava_underground"
     ],
@@ -56,7 +64,16 @@
       "minecraft:iceberg_blue"
     ],
     [],
-    [],
+    [
+      "flying_stuff:grass_glaciated_patch",
+      "flying_stuff:icespikemedium_0",
+      "flying_stuff:icespikesmall_0",
+      "flying_stuff:icespikesmall_1",
+      "flying_stuff:icespikesmall_2",
+      "flying_stuff:icespike_0",
+      "flying_stuff:launcher_01_ice",
+      "flying_stuff:tall_grass"
+    ],
     [],
     [
       "minecraft:ore_coal_upper",
@@ -80,6 +97,10 @@
     [],
     [
       "flying_stuff:glaciated_floating_islands_tree",
+      "flying_stuff:glaciated_fern",
+      "flying_stuff:glaciated_ground_trees",
+      "flying_stuff:short_glaciated_grass",
+      "flying_stuff:tall_glaciated_grass",
       "minecraft:patch_large_fern",
       "minecraft:patch_tall_grass",
       "minecraft:trees_swamp",

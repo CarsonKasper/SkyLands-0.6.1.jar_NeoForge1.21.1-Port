@@ -116,11 +116,11 @@ public class PaleCelestiumSpikeBlock extends Block implements SimpleWaterloggedB
       };
    }
 
-   protected void m_7926_(Builder<Block, BlockState> builder) {
+   protected void createBlockStateDefinition(Builder<Block, BlockState> builder) {
       builder.add(FACING, FACE, WATERLOGGED);
    }
 
-   public BlockState m_5573_(BlockPlaceContext context) {
+   public BlockState getStateForPlacement(BlockPlaceContext context) {
       boolean flag = context.getLevel().getFluidState(context.getClickedPos()).getType() == Fluids.WATER;
       return context.getClickedFace().getAxis() == Axis.Y
          ? (BlockState)((BlockState)((BlockState)this.defaultBlockState()
@@ -131,11 +131,11 @@ public class PaleCelestiumSpikeBlock extends Block implements SimpleWaterloggedB
             .setValue(WATERLOGGED, flag);
    }
 
-   public BlockState m_6843_(BlockState state, Rotation rot) {
+   public BlockState rotate(BlockState state, Rotation rot) {
       return (BlockState)state.setValue(FACING, rot.rotate((Direction)state.getValue(FACING)));
    }
 
-   public BlockState m_6943_(BlockState state, Mirror mirrorIn) {
+   public BlockState mirror(BlockState state, Mirror mirrorIn) {
       return state.rotate(mirrorIn.getRotation((Direction)state.getValue(FACING)));
    }
 

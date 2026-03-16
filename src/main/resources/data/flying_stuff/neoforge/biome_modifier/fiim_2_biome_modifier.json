@@ -1,0 +1,12 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": [
+    "grove",
+    "frozen_peaks",
+    "deep_frozen_ocean",
+    "jagged_peaks",
+    "snowy_plains"
+  ],
+  "features": "flying_stuff:fiim_2",
+  "step": "raw_generation"
+}

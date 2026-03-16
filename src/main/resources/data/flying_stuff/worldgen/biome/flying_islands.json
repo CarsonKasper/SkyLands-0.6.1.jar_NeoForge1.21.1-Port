@@ -42,7 +42,20 @@
     ]
   },
   "features": [
-    [],
+    [
+      "flying_stuff:fidr_0_feature",
+      "flying_stuff:fimsnow_0_feature",
+      "flying_stuff:fim_0_feature",
+      "flying_stuff:fim_1_feature",
+      "flying_stuff:fim_3",
+      "flying_stuff:fim_4",
+      "flying_stuff:fim_5",
+      "flying_stuff:fis_0_feature",
+      "flying_stuff:fis_1_feature",
+      "flying_stuff:fis_2_feature",
+      "flying_stuff:fis_3_feature",
+      "flying_stuff:fis_5_feature"
+    ],
     [
       "minecraft:lake_lava_underground"
     ],
@@ -50,7 +63,20 @@
       "minecraft:large_dripstone"
     ],
     [],
-    [],
+    [
+      "flying_stuff:crm_01_feature",
+      "flying_stuff:dirt_patch",
+      "flying_stuff:fallen_is_01_feature",
+      "flying_stuff:fallen_is_02",
+      "flying_stuff:fim_2_feature",
+      "flying_stuff:grass_patch",
+      "flying_stuff:launcher_01_feature",
+      "flying_stuff:spf_feature",
+      "flying_stuff:spl_01_feature",
+      "flying_stuff:spm_01_feature",
+      "flying_stuff:sps_01_feature",
+      "flying_stuff:tall_grass"
+    ],
     [],
     [
       "minecraft:ore_coal_upper",
@@ -74,6 +100,7 @@
     [],
     [
       "flying_stuff:flying_islands_tree",
+      "flying_stuff:golden_ground_tree",
       "minecraft:patch_large_fern",
       "minecraft:patch_tall_grass",
       "minecraft:patch_grass_forest",

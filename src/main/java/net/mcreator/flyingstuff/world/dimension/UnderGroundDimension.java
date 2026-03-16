@@ -11,26 +11,23 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.EventBusSubscriber.Bus;
 
-@EventBusSubscriber
+@EventBusSubscriber(bus = Bus.MOD, value = Dist.CLIENT)
 public class UnderGroundDimension {
-   @EventBusSubscriber(bus = Bus.MOD)
-   public static class DimensionSpecialEffectsHandler {
-      @SubscribeEvent
-      @OnlyIn(Dist.CLIENT)
-      public static void registerDimensionSpecialEffects(RegisterDimensionSpecialEffectsEvent event) {
-         DimensionSpecialEffects customEffect = new DimensionSpecialEffects(-3000.0F, false, SkyType.NONE, false, false) {
-            @Override
-            public Vec3 getBrightnessDependentFogColor(Vec3 color, float sunHeight) {
-               return new Vec3(0.0, 0.0, 0.0);
-            }
+   @SubscribeEvent
+   @OnlyIn(Dist.CLIENT)
+   public static void registerDimensionSpecialEffects(RegisterDimensionSpecialEffectsEvent event) {
+      DimensionSpecialEffects customEffect = new DimensionSpecialEffects(-3000.0F, false, SkyType.NONE, false, false) {
+         @Override
+         public Vec3 getBrightnessDependentFogColor(Vec3 color, float sunHeight) {
+            return new Vec3(0.0, 0.0, 0.0);
+         }
 
-            @Override
-            public boolean isFoggyAt(int x, int y) {
-               return false;
-            }
-         };
-         event.register(ResourceLocation.parse("flying_stuff:under_ground"), customEffect);
-      }
+         @Override
+         public boolean isFoggyAt(int x, int y) {
+            return false;
+         }
+      };
+      event.register(ResourceLocation.parse("flying_stuff:under_ground"), customEffect);
    }
 }
 

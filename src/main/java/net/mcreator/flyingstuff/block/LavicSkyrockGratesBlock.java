@@ -49,11 +49,11 @@ public class LavicSkyrockGratesBlock extends Block implements SimpleWaterloggedB
       return Shapes.empty();
    }
 
-   protected void m_7926_(Builder<Block, BlockState> builder) {
+   protected void createBlockStateDefinition(Builder<Block, BlockState> builder) {
       builder.add(WATERLOGGED);
    }
 
-   public BlockState m_5573_(BlockPlaceContext context) {
+   public BlockState getStateForPlacement(BlockPlaceContext context) {
       boolean flag = context.getLevel().getFluidState(context.getClickedPos()).getType() == Fluids.WATER;
       return (BlockState)this.defaultBlockState().setValue(WATERLOGGED, flag);
    }

@@ -1,0 +1,9 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": [
+    "plains",
+    "cherry_grove"
+  ],
+  "features": "flying_stuff:sps_01_feature",
+  "step": "surface_structures"
+}

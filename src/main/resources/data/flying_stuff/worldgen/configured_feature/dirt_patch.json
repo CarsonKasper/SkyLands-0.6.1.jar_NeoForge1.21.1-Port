@@ -8,11 +8,9 @@
       "Name": "minecraft:coarse_dirt"
     },
     "radius": {
-      "type": "uniform",
-      "value": {
-        "min_inclusive": 2,
-        "max_inclusive": 6
-      }
+      "type": "minecraft:uniform",
+      "min_inclusive": 2,
+      "max_inclusive": 6
     }
   }
 }

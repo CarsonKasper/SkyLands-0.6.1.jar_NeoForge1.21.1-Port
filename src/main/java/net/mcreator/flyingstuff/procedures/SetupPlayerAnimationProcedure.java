@@ -9,7 +9,6 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.network.NetworkEvent.Context;
 
-@EventBusSubscriber(modid = "flying_stuff")
 public class SetupPlayerAnimationProcedure {
    public static void execute() {
       execute(null);

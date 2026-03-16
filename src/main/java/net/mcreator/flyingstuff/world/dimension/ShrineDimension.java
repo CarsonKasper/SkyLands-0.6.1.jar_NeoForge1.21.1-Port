@@ -11,26 +11,23 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.EventBusSubscriber.Bus;
 
-@EventBusSubscriber
+@EventBusSubscriber(bus = Bus.MOD, value = Dist.CLIENT)
 public class ShrineDimension {
-   @EventBusSubscriber(bus = Bus.MOD)
-   public static class DimensionSpecialEffectsHandler {
-      @SubscribeEvent
-      @OnlyIn(Dist.CLIENT)
-      public static void registerDimensionSpecialEffects(RegisterDimensionSpecialEffectsEvent event) {
-         DimensionSpecialEffects customEffect = new DimensionSpecialEffects(Float.NaN, true, SkyType.NONE, false, false) {
-            @Override
-            public Vec3 getBrightnessDependentFogColor(Vec3 color, float sunHeight) {
-               return new Vec3(0.031372549, 0.0980392157, 0.0666666667);
-            }
+   @SubscribeEvent
+   @OnlyIn(Dist.CLIENT)
+   public static void registerDimensionSpecialEffects(RegisterDimensionSpecialEffectsEvent event) {
+      DimensionSpecialEffects customEffect = new DimensionSpecialEffects(Float.NaN, true, SkyType.NONE, false, false) {
+         @Override
+         public Vec3 getBrightnessDependentFogColor(Vec3 color, float sunHeight) {
+            return new Vec3(0.031372549, 0.0980392157, 0.0666666667);
+         }
 
-            @Override
-            public boolean isFoggyAt(int x, int y) {
-               return true;
-            }
-         };
-         event.register(ResourceLocation.parse("flying_stuff:shrine"), customEffect);
-      }
+         @Override
+         public boolean isFoggyAt(int x, int y) {
+            return true;
+         }
+      };
+      event.register(ResourceLocation.parse("flying_stuff:shrine"), customEffect);
    }
 }
 

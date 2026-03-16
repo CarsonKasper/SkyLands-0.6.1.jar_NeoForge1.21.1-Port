@@ -61,7 +61,7 @@ public abstract class LegacyRandomizableContainerBlockEntity extends Randomizabl
    }
 
    public void setChanged() {
-      this.setChanged();
+      super.setChanged();
    }
 
    public boolean canPlaceItemThroughFace(int slot, ItemStack stack, @Nullable Direction side) {

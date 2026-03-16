@@ -106,22 +106,22 @@ public class CelestineSpikeBlock extends Block {
       };
    }
 
-   protected void m_7926_(Builder<Block, BlockState> builder) {
+   protected void createBlockStateDefinition(Builder<Block, BlockState> builder) {
       builder.add(FACING, FACE);
    }
 
-   public BlockState m_5573_(BlockPlaceContext context) {
+   public BlockState getStateForPlacement(BlockPlaceContext context) {
       return context.getClickedFace().getAxis() == Axis.Y
          ? (BlockState)((BlockState)this.defaultBlockState().setValue(FACE, context.getClickedFace().getOpposite() == Direction.UP ? AttachFace.CEILING : AttachFace.FLOOR))
             .setValue(FACING, context.getHorizontalDirection())
          : (BlockState)((BlockState)this.defaultBlockState().setValue(FACE, AttachFace.WALL)).setValue(FACING, context.getClickedFace());
    }
 
-   public BlockState m_6843_(BlockState state, Rotation rot) {
+   public BlockState rotate(BlockState state, Rotation rot) {
       return (BlockState)state.setValue(FACING, rot.rotate((Direction)state.getValue(FACING)));
    }
 
-   public BlockState m_6943_(BlockState state, Mirror mirrorIn) {
+   public BlockState mirror(BlockState state, Mirror mirrorIn) {
       return state.rotate(mirrorIn.getRotation((Direction)state.getValue(FACING)));
    }
 }

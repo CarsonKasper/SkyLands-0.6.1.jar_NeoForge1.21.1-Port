@@ -36,13 +36,25 @@
     ]
   },
   "features": [
-    [],
+    [
+      "flying_stuff:cfimsnow_0",
+      "flying_stuff:cfim_0",
+      "flying_stuff:cfim_1",
+      "flying_stuff:cfis_0",
+      "flying_stuff:cfis_1"
+    ],
     [
       "minecraft:lake_lava_underground"
     ],
     [],
     [],
-    [],
+    [
+      "flying_stuff:dirt_patch",
+      "flying_stuff:grass_patch",
+      "flying_stuff:spl_01_feature",
+      "flying_stuff:spm_01_feature",
+      "flying_stuff:sps_01_feature"
+    ],
     [],
     [
       "minecraft:ore_coal_upper",
@@ -65,6 +77,7 @@
     [],
     [],
     [
+      "flying_stuff:cherry_tree",
       "minecraft:patch_large_fern",
       "minecraft:patch_grass_jungle"
     ],

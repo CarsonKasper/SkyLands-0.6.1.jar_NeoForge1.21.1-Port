@@ -41,12 +41,26 @@
     ]
   },
   "features": [
-    [],
+    [
+      "flying_stuff:film_0",
+      "flying_stuff:fils_0",
+      "flying_stuff:fils_1",
+      "flying_stuff:fils_2",
+      "flying_stuff:fils_3",
+      "flying_stuff:fils_4"
+    ],
     [
       "minecraft:lake_lava_underground"
     ],
     [],
-    [],
+    [
+      "flying_stuff:launcher_01lava",
+      "flying_stuff:lavic_delta",
+      "flying_stuff:lavic_delta_magma",
+      "flying_stuff:lavic_grass_patches",
+      "flying_stuff:lavic_patches",
+      "flying_stuff:tall_grass"
+    ],
     [],
     [],
     [

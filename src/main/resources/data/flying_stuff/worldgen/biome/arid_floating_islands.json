@@ -36,7 +36,15 @@
     ]
   },
   "features": [
-    [],
+    [
+      "flying_stuff:dfil_0",
+      "flying_stuff:dfis_0",
+      "flying_stuff:dfis_1",
+      "flying_stuff:dfis_2",
+      "flying_stuff:dfis_3",
+      "flying_stuff:dfis_4",
+      "flying_stuff:dfis_5"
+    ],
     [
       "minecraft:lake_lava_underground"
     ],
@@ -46,7 +54,12 @@
       "minecraft:fossil_lower"
     ],
     [
-      "minecraft:desert_well"
+      "minecraft:desert_well",
+      "flying_stuff:desertspike_1",
+      "flying_stuff:desertspike_2",
+      "flying_stuff:desertspike",
+      "flying_stuff:desert_deco",
+      "flying_stuff:launcherdesert"
     ],
     [],
     [

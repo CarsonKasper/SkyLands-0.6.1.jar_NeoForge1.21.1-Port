@@ -27,15 +27,15 @@ public class CelestialWoodBlock extends Block {
       return 10;
    }
 
-   protected void m_7926_(Builder<Block, BlockState> builder) {
+   protected void createBlockStateDefinition(Builder<Block, BlockState> builder) {
       builder.add(AXIS);
    }
 
-   public BlockState m_5573_(BlockPlaceContext context) {
+   public BlockState getStateForPlacement(BlockPlaceContext context) {
       return (BlockState)this.defaultBlockState().setValue(AXIS, context.getClickedFace().getAxis());
    }
 
-   public BlockState m_6843_(BlockState state, Rotation rot) {
+   public BlockState rotate(BlockState state, Rotation rot) {
       if (rot == Rotation.CLOCKWISE_90 || rot == Rotation.COUNTERCLOCKWISE_90) {
          if (state.getValue(AXIS) == Axis.X) {
             return (BlockState)state.setValue(AXIS, Axis.Z);

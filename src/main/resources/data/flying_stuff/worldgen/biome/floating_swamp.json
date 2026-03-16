@@ -30,13 +30,22 @@
     ]
   },
   "features": [
-    [],
+    [
+      "flying_stuff:fism_0",
+      "flying_stuff:fism_1",
+      "flying_stuff:fiss_1",
+      "flying_stuff:fiss"
+    ],
     [
       "minecraft:lake_lava_underground"
     ],
     [],
     [],
-    [],
+    [
+      "flying_stuff:icespikesmall_0",
+      "flying_stuff:icespikesmall_1",
+      "flying_stuff:icespikesmall_2"
+    ],
     [],
     [
       "minecraft:ore_coal_upper",

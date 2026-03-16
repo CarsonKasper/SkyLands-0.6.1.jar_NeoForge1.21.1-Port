@@ -1,12 +1,12 @@
 package net.mcreator.flyingstuff.init;
 
+import net.minecraft.core.registries.Registries;
 import net.minecraft.world.entity.decoration.PaintingVariant;
 import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public class FlyingStuffModPaintings {
-   public static final DeferredRegister<PaintingVariant> REGISTRY = DeferredRegister.create(ForgeRegistries.PAINTING_VARIANTS, "flying_stuff");
+   public static final DeferredRegister<PaintingVariant> REGISTRY = DeferredRegister.create(Registries.PAINTING_VARIANT, "flying_stuff");
    public static final RegistryObject<PaintingVariant> GOLDEN_SKY = REGISTRY.register(
       "golden_sky", () -> new PaintingVariant(16, 32, net.minecraft.resources.ResourceLocation.fromNamespaceAndPath("flying_stuff", "golden_sky"))
    );

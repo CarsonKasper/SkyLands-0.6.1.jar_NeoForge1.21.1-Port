@@ -8,11 +8,9 @@
       "Name": "minecraft:sandstone"
     },
     "radius": {
-      "type": "uniform",
-      "value": {
-        "min_inclusive": 3,
-        "max_inclusive": 4
-      }
+      "type": "minecraft:uniform",
+      "min_inclusive": 3,
+      "max_inclusive": 4
     }
   }
 }

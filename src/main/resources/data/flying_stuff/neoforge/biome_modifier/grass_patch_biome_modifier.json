@@ -1,0 +1,9 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": [
+    "plains",
+    "meadow"
+  ],
+  "features": "flying_stuff:grass_patch",
+  "step": "surface_structures"
+}

@@ -1,0 +1,10 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": [
+    "plains",
+    "snowy_plains",
+    "badlands"
+  ],
+  "features": "flying_stuff:tall_grass",
+  "step": "surface_structures"
+}
